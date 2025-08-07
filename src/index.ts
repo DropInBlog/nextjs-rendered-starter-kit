@@ -4,15 +4,33 @@ import fs from 'fs';
 import path from 'path';
 import { Command } from 'commander';
 import chalk from 'chalk';
+import inquirer from 'inquirer';
 
 const program = new Command();
+
 program
-  .name('create-blog-module')
-  .description('Add /blog route to an existing Next.js project')
-  .action(() => {
+  .name('create-nextjs-dib-blog')
+  .description('Add /blog and /dib-lib to a Next.js project')
+  .version('1.0.0')
+  .action(async () => {
+    // Ask user if project uses src/
+    const answers = await inquirer.prompt([
+      {
+        type: 'confirm',
+        name: 'usesSrc',
+        message: 'Is your Next.js project using the "src/" folder?',
+        default: true,
+      },
+    ]);
+
     const projectRoot = process.cwd();
-    const targetBlogDir = path.join(projectRoot, 'src/app/blog');
-    const targetLibDir = path.join(projectRoot, 'src/dib-lib');
+    const basePath = answers.usesSrc
+      ? path.join(projectRoot, 'src')
+      : projectRoot;
+
+    const targetBlogDir = path.join(basePath, 'app/blog');
+    const targetLibDir = path.join(basePath, 'dib-lib');
+
     const blogDir = path.join(__dirname, '../template/blog');
     const libDir = path.join(__dirname, '../template/dib-lib');
 
@@ -40,8 +58,16 @@ program
     fs.mkdirSync(targetLibDir, { recursive: true });
     fs.cpSync(libDir, targetLibDir, { recursive: true });
 
-    console.log(chalk.green('✅ Blog module added to src/app/blog'));
-    console.log(chalk.green('✅ Lib module added to src/dib-lib'));
+    console.log(
+      chalk.green(
+        `✅ Blog module added to ${path.relative(projectRoot, targetBlogDir)}`
+      )
+    );
+    console.log(
+      chalk.green(
+        `✅ Lib module added to ${path.relative(projectRoot, targetLibDir)}`
+      )
+    );
   });
 
 program.parse();
