@@ -23,6 +23,14 @@
     "dist",
     "template"
   ],
+  "homepage": "https://github.com/DropInBlog/create-nextjs-dib-blog#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DropInBlog/create-nextjs-dib-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DropInBlog/create-nextjs-dib-blog/issues"
+  },
   "dependencies": {
     "chalk": "^5.5.0",
     "commander": "^14.0.0"
