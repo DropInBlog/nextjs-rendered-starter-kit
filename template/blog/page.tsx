@@ -1,5 +1,5 @@
 import { dibApi } from '../../dib-lib/api';
-import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-page-fetcher';
+import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-rendered';
 
 // ✅ metadata
 export const generateMetadata = () =>

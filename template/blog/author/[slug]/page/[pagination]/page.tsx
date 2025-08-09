@@ -1,4 +1,4 @@
-import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-page-fetcher';
+import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-rendered';
 import { dibApi } from '../../../../../../dib-lib/api';
 
 export const generateMetadata = async ({
