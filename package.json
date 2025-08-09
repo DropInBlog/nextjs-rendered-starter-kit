@@ -1,5 +1,5 @@
 {
-  "name": "@dropinblog/create-nextjs-dib-blog",
+  "name": "@dropinblog/nextjs-rendered-starter-kit",
   "version": "1.0.0",
   "description": "This is a CLI tool to create a Next.js blog with DropInBlog integration.",
   "main": "index.js",
@@ -23,13 +23,13 @@
     "dist",
     "template"
   ],
-  "homepage": "https://github.com/DropInBlog/create-nextjs-dib-blog#readme",
+  "homepage": "https://github.com/DropInBlog/nextjs-rendered-starter-kit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DropInBlog/create-nextjs-dib-blog.git"
+    "url": "git+https://github.com/DropInBlog/nextjs-rendered-starter-kit.git"
   },
   "bugs": {
-    "url": "https://github.com/DropInBlog/create-nextjs-dib-blog/issues"
+    "url": "https://github.com/DropInBlog/nextjs-rendered-starter-kit/issues"
   },
   "dependencies": {
     "chalk": "^5.5.0",
