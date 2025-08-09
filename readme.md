@@ -1,4 +1,4 @@
-# @dropinblog/create-nextjs-dib-blog
+# @dropinblog/nextjs-rendered-starter-kit
 
 A CLI tool to quickly add a DropInBlog-powered `/blog` route and supporting library to your Next.js project.
 
@@ -12,7 +12,7 @@ A CLI tool to quickly add a DropInBlog-powered `/blog` route and supporting libr
 ## Installation
 
 ```sh
-npm install @dropinblog/nextjs-page-fetcher
+npm install @dropinblog/nextjs-rendered
 ```
 
 ## Usage
