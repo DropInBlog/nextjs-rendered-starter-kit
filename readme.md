@@ -12,7 +12,7 @@ A CLI tool to quickly add a DropInBlog-powered `/blog` route and supporting libr
 ## Installation
 
 ```sh
-npm install @dropinblog/nextjs-rendered
+npm install @dropinblog/nextjs-rendered xml2js
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ You will be prompted to confirm if your project uses a `src/` directory.
 
 ## What’s Included
 
-- `/blog`: All the necessary pages for posts, categories, authors, and pagination.
+- `/blog`: All the necessary pages for sitemap, posts, categories, authors, feeds, and pagination.
 - `/dib-lib/api.ts`: Pre-configured DropInBlog API helper.
 
 ## Configuration

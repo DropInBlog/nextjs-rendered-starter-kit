@@ -1,6 +1,6 @@
+import { dibApi } from '@/lib/api';
 import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-rendered';
 import React from 'react';
-import { dibApi } from '../../../../dib-lib/api';
 
 export const generateMetadata = async ({
   params,

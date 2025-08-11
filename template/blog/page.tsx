@@ -1,4 +1,4 @@
-import { dibApi } from '../../dib-lib/api';
+import { dibApi } from '@/lib/api';
 import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-rendered';
 
 // ✅ metadata
