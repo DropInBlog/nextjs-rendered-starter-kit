@@ -1,6 +1,6 @@
-import { dibApi } from '@/lib/api';
 import React from 'react';
 import xml2js from 'xml2js';
+import { dibApi } from '../../dib-lib/api';
 
 export default async function BlogFeed() {
   const json = await dibApi.fetchBlogFeed();

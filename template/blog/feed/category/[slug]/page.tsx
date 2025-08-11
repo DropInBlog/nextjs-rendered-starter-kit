@@ -1,4 +1,5 @@
-import { dibApi } from '@/lib/api';
+import { dibApi } from '../../../../dib-lib/api';
+
 import React from 'react';
 import xml2js from 'xml2js';
 

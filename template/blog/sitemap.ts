@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import xml2js from 'xml2js';
-import { dibApi } from '@/lib/api';
 import React from 'react';
+import { dibApi } from '../dib-lib/api';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const json = await dibApi.fetchSitemap();
