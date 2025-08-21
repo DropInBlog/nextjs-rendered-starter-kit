@@ -1,4 +1,4 @@
-import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-rendered';
+import { DibPage, dibUtils } from '@dropinblog/nextjs-rendered';
 import { dibApi } from '../../../../../../dib-lib/api';
 export const generateMetadata = async ({
   params,
@@ -16,5 +16,5 @@ export default async function CategoryPagination({
     slug,
     pagination,
   });
-  return <DibPageFetcher body_html={body_html} head_data={head_data} />;
+  return <DibPage body_html={body_html} head_data={head_data} />;
 }

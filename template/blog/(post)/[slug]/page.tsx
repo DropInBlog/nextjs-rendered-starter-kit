@@ -1,4 +1,4 @@
-import { DibPageFetcher, dibUtils } from '@dropinblog/nextjs-rendered';
+import { DibPage, dibUtils } from '@dropinblog/nextjs-rendered';
 import React from 'react';
 import { dibApi } from '../../../../dib-lib/api';
 
@@ -13,5 +13,5 @@ export default async function Blog({ params }: { params: { slug: string } }) {
   const { body_html, head_data } = await dibApi.fetchPost({
     slug,
   });
-  return <DibPageFetcher body_html={body_html} head_data={head_data} />;
+  return <DibPage body_html={body_html} head_data={head_data} />;
 }
