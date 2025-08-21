@@ -1,5 +1,5 @@
 import { DibApi } from '@dropinblog/nextjs-rendered';
-const token = 'YOUR_DROPINBLOG_API_TOKEN'; // Replace with your actual API token
-const blogId = 'YOUR_BLOG_ID'; // Replace with your actual blog ID
+const token = process.env.DROPINBLOG_API_TOKEN as string;
+const blogId = process.env.DROPINBLOG_BLOG_ID as string;
 
 export const dibApi = new DibApi(token, blogId);

@@ -12,7 +12,7 @@ A CLI tool to quickly add a DropInBlog-powered `/blog` route and supporting libr
 ## Installation
 
 ```sh
-npm install @dropinblog/nextjs-rendered xml2js
+npm install @dropinblog/nextjs-rendered
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install @dropinblog/nextjs-rendered xml2js
 Run the CLI in the root of your Next.js project:
 
 ```sh
-npx create-nextjs-dib-blog
+npx create-dropinblog-nextjs
 ```
 
 You will be prompted to confirm if your project uses a `src/` directory.
