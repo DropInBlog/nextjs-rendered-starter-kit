@@ -1,4 +1,4 @@
-import { DibPage, dibUtils } from '@dropinblog/nextjs-rendered';
+import { DibBlog, dibUtils } from '@dropinblog/nextjs-rendered';
 import { dibApi } from '../../../../../../dib-lib/api';
 
 export const generateMetadata = async ({
@@ -17,5 +17,5 @@ export default async function AuthorPagination({
     slug,
     pagination,
   });
-  return <DibPage body_html={body_html} head_data={head_data} />;
+  return <DibBlog body_html={body_html} head_data={head_data} />;
 }

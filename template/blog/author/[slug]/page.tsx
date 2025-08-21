@@ -1,4 +1,4 @@
-import { DibPage, dibUtils } from '@dropinblog/nextjs-rendered';
+import { DibBlog, dibUtils } from '@dropinblog/nextjs-rendered';
 import { dibApi } from '../../../../dib-lib/api';
 
 export const generateMetadata = async ({
@@ -12,5 +12,5 @@ export default async function Author({ params }: { params: { slug: string } }) {
   const { body_html, head_data } = await dibApi.fetchAuthor({
     slug,
   });
-  return <DibPage body_html={body_html} head_data={head_data} />;
+  return <DibBlog body_html={body_html} head_data={head_data} />;
 }

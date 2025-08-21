@@ -1,5 +1,5 @@
 import { dibApi } from '../../dib-lib/api';
-import { DibPage, dibUtils } from '@dropinblog/nextjs-rendered';
+import { DibBlog, dibUtils } from '@dropinblog/nextjs-rendered';
 
 // ✅ metadata
 export const generateMetadata = () =>
@@ -8,5 +8,5 @@ export const generateMetadata = () =>
 export default async function Blog() {
   const { body_html, head_data } = await dibApi.fetchMainList();
 
-  return <DibPage body_html={body_html} head_data={head_data} />;
+  return <DibBlog body_html={body_html} head_data={head_data} />;
 }
