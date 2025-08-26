@@ -4,7 +4,11 @@
   "description": "This is a CLI tool to create a Next.js blog with DropInBlog integration.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "pub": "npm run build && npm publish --access public",
+    "bump:patch": "npm version patch",
+    "bump:minor": "npm version minor",
+    "bump:major": "npm version major"
   },
   "keywords": [
     "dropinblog",
