@@ -1,13 +1,14 @@
 # @dropinblog/nextjs-rendered-starter-kit
 
-A CLI tool to quickly add a DropInBlog-powered `/blog` route and supporting library to your Next.js project.
+A CLI that scaffolds a DropInBlog‑powered /blog into an existing Next.js project. It adds a complete blog route along with a tiny helper library for fetching pre‑rendered content from DropInBlog’s API.
 
 ## Features
 
 - Installs a ready-to-use `/blog` route with DropInBlog integration.
-- Adds a `/dib-lib` folder with API helpers.
-- Supports Next.js projects with or without a `src/` directory.
-- Safe: will not overwrite existing `/blog` or `/dib-lib` folders.
+- Includes main list, category list and author list routes with pagination.
+- Includes single post route.
+- Includes sitemap route.
+- Includes main RSS feed, category RSS feed and author RSS feed with pagination.
 
 ## Installation
 
@@ -20,7 +21,7 @@ npm install @dropinblog/nextjs-rendered
 Run the CLI in the root of your Next.js project:
 
 ```sh
-npx create-dropinblog-nextjs
+npx @dropinblog/nextjs-rendered-starter-kit
 ```
 
 You will be prompted to confirm if your project uses a `src/` directory.
@@ -35,11 +36,11 @@ You will be prompted to confirm if your project uses a `src/` directory.
 
 ## Configuration
 
-1. Open `dib-lib/api.ts` and replace the placeholders with your actual DropInBlog API token and blog ID:
+1. Add your DropInBlog API token and blog ID to your .env:
 
    ```ts
-   const token = 'YOUR_DROPINBLOG_API_TOKEN'; // Replace with your actual API token
-   const blogId = 'YOUR_BLOG_ID'; // Replace with your actual blog ID
+   DROPINBLOG_API_TOKEN=your_api_token_here
+   DROPINBLOG_BLOG_ID=your_blog_id_here
    ```
 
 2. Deploy or run your Next.js app. The `/blog` route is now live and powered by DropInBlog.

@@ -10,7 +10,7 @@ export async function GET(
   const json = await dibApi.fetchCategoryFeed({ slug });
   return new NextResponse(json.data.feed, {
     headers: {
-      'Content-Type': 'application/rss+xml',
+      'Content-Type': json.data.content_type,
     },
   });
 }
