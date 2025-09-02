@@ -39,15 +39,15 @@ You will be prompted to confirm if your project uses a `src/` directory.
 1. Add your DropInBlog API token and blog ID to your .env:
 
    ```ts
-   DROPINBLOG_API_TOKEN=your_api_token_here
-   DROPINBLOG_BLOG_ID=your_blog_id_here
+   DROPINBLOG_API_TOKEN = your_api_token_here;
+   DROPINBLOG_BLOG_ID = your_blog_id_here;
    ```
 
 2. Deploy or run your Next.js app. The `/blog` route is now live and powered by DropInBlog.
 
 ## Requirements
 
-- Node.js 16+
+- Node.js 18+
 - Next.js 13+ (with App Router)
 
 ## License
