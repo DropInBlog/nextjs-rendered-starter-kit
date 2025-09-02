@@ -2,14 +2,19 @@
 
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { Command } from 'commander';
 import chalk from 'chalk';
 import inquirer from 'inquirer';
 
+// emulate __dirname in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const program = new Command();
 
 program
-  .name('create-nextjs-dib-blog')
+  .name('nextjs-rendered-starter-kit')
   .description('Add /blog and /dib-lib to a Next.js project')
   .version('1.0.0')
   .action(async () => {
