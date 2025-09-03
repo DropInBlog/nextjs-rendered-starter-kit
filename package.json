@@ -1,6 +1,6 @@
 {
   "name": "@dropinblog/nextjs-rendered-starter-kit",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "This is a CLI tool to create a Next.js blog with DropInBlog integration.",
   "main": "index.js",
   "scripts": {
