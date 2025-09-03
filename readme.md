@@ -8,7 +8,7 @@ A CLI that scaffolds a DropInBlog‑powered /blog into an existing Next.js proje
 - Includes main list, category list and author list routes with pagination.
 - Includes single post route.
 - Includes sitemap route.
-- Includes main RSS feed, category RSS feed and author RSS feed with pagination.
+- Includes main RSS feed, category RSS feed and author RSS feed.
 
 ## Installation
 
