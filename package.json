@@ -19,7 +19,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "bin": {
     "@dropinblog/nextjs-rendered-starter-kit": "./dist/index.js"
   },
