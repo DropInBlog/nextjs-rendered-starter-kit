@@ -38,7 +38,7 @@
     "url": "https://github.com/DropInBlog/nextjs-rendered-starter-kit/issues"
   },
   "dependencies": {
-    "chalk": "^5.5.0",
+    "chalk": "^4.1.2",
     "commander": "^14.0.0",
     "inquirer": "^12.9.0"
   },
