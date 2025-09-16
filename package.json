@@ -2,9 +2,8 @@
   "name": "@dropinblog/nextjs-rendered-starter-kit",
   "version": "1.0.9",
   "description": "This is a CLI tool to create a Next.js blog with DropInBlog integration.",
-  "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "pub": "npm run build && npm publish --access public",
     "bump:patch": "npm version patch",
     "bump:minor": "npm version minor",
@@ -20,6 +19,9 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "bin": {
     "@dropinblog/nextjs-rendered-starter-kit": "./dist/index.js"
   },
