@@ -1,59 +1,102 @@
 # @dropinblog/nextjs-rendered-starter-kit
 
-A CLI that scaffolds a DropInBlog‑powered /blog into an existing Next.js project. It adds a complete blog route along with a tiny helper library for fetching pre‑rendered content from DropInBlog’s API.
+A CLI that scaffolds a DropInBlog-powered `/blog` into an existing Next.js project.  
+It automatically adds a complete blog route along with a helper library for fetching pre-rendered content from DropInBlog’s API — and can optionally install all required dependencies for you.
 
-## Features
+## ✨ Features
 
 - Installs a ready-to-use `/blog` route with DropInBlog integration.
-- Includes main list, category list and author list routes with pagination.
-- Includes single post route.
-- Includes sitemap route.
-- Includes main RSS feed, category RSS feed and author RSS feed.
+- Automatically creates `/dib-lib` helper library for fetching and rendering content.
+- Detects whether your project uses a `src/` folder.
+- Optional command line parameter `--no-src` Project does not use src folder.
+- Supports **npm**, **yarn**, and **pnpm** automatically.
+- Optionally installs required dependencies:
+  - [`@dropinblog/nextjs-rendered`](https://www.npmjs.com/package/@dropinblog/nextjs-rendered)
+  - [`@dropinblog/dropinblog-api-client`](https://www.npmjs.com/package/@dropinblog/dropinblog-api-client)
+- Includes:
+  - Blog index with pagination.
+  - Category and author routes.
+  - Single post route.
+  - Sitemap generation.
+  - RSS feeds (main, category, and author).
 
-## Installation
+---
 
-```sh
-npm install @dropinblog/nextjs-rendered
-```
+## 🚀 Usage
 
-## Usage
+Run this command in the **root** of your Next.js project:
 
-Run the CLI in the root of your Next.js project:
-
-```sh
+```bash
 npx @dropinblog/nextjs-rendered-starter-kit
 ```
 
-You will be prompted to confirm if your project uses a `src/` directory.
+You’ll be asked a few interactive questions:
 
-- If **yes**, `/blog` and `/dib-lib` will be added to `src/app` and `src/dib-lib`.
-- If **no**, they will be added to `app` and `dib-lib` at the project root.
+1. **Is your Next.js project using the `src/` folder?**
 
-## What’s Included
+   - If **yes**, `/blog` and `/dib-lib` will be added to `src/app` and `src/dib-lib`.
+   - If **no**, they will be added to `app` and `dib-lib` in your project root.
 
-- `/blog`: All the necessary pages for sitemap, posts, categories, authors, feeds, and pagination.
-- `/dib-lib/api.ts`: Pre-configured DropInBlog API helper.
+2. **Do you want to install DropInBlog dependencies now?**
+   - If you confirm, the CLI automatically installs the required packages using your preferred package manager (npm, yarn, or pnpm).
 
-## Configuration
+---
 
-1. Add your DropInBlog API token and blog ID to your .env:
+## 🧩 Manual Dependency Installation (optional)
 
-   ```ts
+If you skipped automatic installation, run this manually:
+
+```bash
+npm install @dropinblog/nextjs-rendered @dropinblog/dropinblog-api-client
+```
+
+or with Yarn:
+
+```bash
+yarn add @dropinblog/nextjs-rendered @dropinblog/dropinblog-api-client
+```
+
+---
+
+## 📁 What’s Included
+
+- **`/blog`** → A fully functional DropInBlog route (list, post, category, author, sitemap, and RSS).
+- **`/dib-lib/api.ts`** → Preconfigured helper for fetching data from the DropInBlog API.
+
+---
+
+## ⚙️ Configuration
+
+1. Add your DropInBlog credentials to your `.env` file:
+
+   ```bash
    DROPINBLOG_API_TOKEN=your_api_token_here
    DROPINBLOG_BLOG_ID=your_blog_id_here
    ```
 
-2. Deploy or run your Next.js app. The `/blog` route is now live and powered by DropInBlog.
+2. Start or deploy your Next.js app — your blog is live at:
 
-## Requirements
+   ```
+   /blog
+   ```
 
-- Node.js 18+
-- Next.js 13+ (with App Router)
+---
 
-## License
+## 📦 Requirements
+
+- **Node.js 18+**
+- **Next.js 13+** (App Router required)
+
+---
+
+## 📄 License
 
 ISC
 
-## Links
+---
+
+## 🔗 Links
 
 - [DropInBlog](https://dropinblog.com/)
+- [@dropinblog/nextjs-rendered](https://www.npmjs.com/package/@dropinblog/nextjs-rendered)
+- [@dropinblog/dropinblog-api-client](https://www.npmjs.com/package/@dropinblog/dropinblog-api-client)
