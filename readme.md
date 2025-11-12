@@ -9,8 +9,6 @@ A CLI that scaffolds a DropInBlog‑powered /blog into an existing Next.js proje
 - Includes sitemap route.
 - Includes main RSS feed, category RSS feed and author RSS feed.
 
----
-
 ## Usage
 
 Run this command in the **root** of your Next.js project:
@@ -29,14 +27,10 @@ You’ll be asked a few interactive questions:
 2. **Do you want to install DropInBlog dependencies now?**
    - If you confirm, the CLI automatically installs the required packages using your preferred package manager (npm, yarn, or pnpm).
 
----
-
 ## What’s Included
 
 - **`/blog`** → A fully functional DropInBlog route (list, post, category, author, sitemap, and RSS).
 - **`/dib-lib/api.ts`** → Preconfigured helper for fetching data from the DropInBlog API.
-
----
 
 ## Configuration
 
@@ -53,20 +47,14 @@ You’ll be asked a few interactive questions:
    /blog
    ```
 
----
-
 ## 📦 Requirements
 
 - **Node.js 18+**
 - **Next.js 13+** (App Router required)
 
----
-
 ## 📄 License
 
 ISC
-
----
 
 ## 🔗 Links
 
