@@ -94,7 +94,7 @@ program
 
       try {
         execSync(
-          `${packageManager} @dropinblog/nextjs-rendered @dropinblog/dropinblog-api-client`,
+          `${packageManager} @dropinblog/nextjs-rendered @dropinblog/api-client`,
           { stdio: 'inherit' }
         );
         console.log(chalk.green('\n✅ Packages installed successfully!'));
@@ -105,7 +105,7 @@ program
         console.log(chalk.yellow('\nPlease run manually:'));
         console.log(
           chalk.cyan(
-            'npm install @dropinblog/nextjs-rendered @dropinblog/dropinblog-api-client'
+            'npm install @dropinblog/nextjs-rendered @dropinblog/api-client'
           )
         );
       }

@@ -12,7 +12,7 @@ It automatically adds a complete blog route along with a helper library for fetc
 - Supports **npm**, **yarn**, and **pnpm** automatically.
 - Optionally installs required dependencies:
   - [`@dropinblog/nextjs-rendered`](https://www.npmjs.com/package/@dropinblog/nextjs-rendered)
-  - [`@dropinblog/dropinblog-api-client`](https://www.npmjs.com/package/@dropinblog/dropinblog-api-client)
+  - [`@dropinblog/api-client`](https://www.npmjs.com/package/@dropinblog/api-client)
 - Includes:
   - Blog index with pagination.
   - Category and author routes.
@@ -47,13 +47,13 @@ You’ll be asked a few interactive questions:
 If you skipped automatic installation, run this manually:
 
 ```bash
-npm install @dropinblog/nextjs-rendered @dropinblog/dropinblog-api-client
+npm install @dropinblog/nextjs-rendered @dropinblog/api-client
 ```
 
 or with Yarn:
 
 ```bash
-yarn add @dropinblog/nextjs-rendered @dropinblog/dropinblog-api-client
+yarn add @dropinblog/nextjs-rendered @dropinblog/api-client
 ```
 
 ---
@@ -99,4 +99,4 @@ ISC
 
 - [DropInBlog](https://dropinblog.com/)
 - [@dropinblog/nextjs-rendered](https://www.npmjs.com/package/@dropinblog/nextjs-rendered)
-- [@dropinblog/dropinblog-api-client](https://www.npmjs.com/package/@dropinblog/dropinblog-api-client)
+- [@dropinblog/api-client](https://www.npmjs.com/package/@dropinblog/api-client)
