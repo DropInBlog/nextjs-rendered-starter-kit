@@ -22,18 +22,18 @@ program
     console.log(chalk.cyan('🚀 Setting up Next.js rendered starter kit...\n'));
 
     // Determine if project uses src/
-    const usesSrc =
-      options.src ??
-      (
-        await inquirer.prompt([
-          {
-            type: 'confirm',
-            name: 'usesSrc',
-            message: 'Is your Next.js project using the "src/" folder?',
-            default: true,
-          },
-        ])
-      ).usesSrc;
+    const usesSrc = options.src
+      ? (
+          await inquirer.prompt([
+            {
+              type: 'confirm',
+              name: 'usesSrc',
+              message: 'Is your Next.js project using the "src/" folder?',
+              default: true,
+            },
+          ])
+        ).usesSrc
+      : options.src;
 
     const projectRoot = process.cwd();
     const basePath = usesSrc ? path.join(projectRoot, 'src') : projectRoot;
