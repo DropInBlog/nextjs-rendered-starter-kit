@@ -3,14 +3,18 @@ import React from 'react';
 import { dibApi } from '../../dib-lib/api';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const json = await dibApi.fetchSitemap();
+  const data = await dibApi.fetchSitemap();
 
   const urlRegex = /<url>([\s\S]*?)<\/url>/g;
   const locRegex = /<loc>(.*?)<\/loc>/;
   const lastmodRegex = /<lastmod>(.*?)<\/lastmod>/;
 
   const urls: MetadataRoute.Sitemap = [];
-  const matches = json.data.sitemap.match(urlRegex) || [];
+  const matches = data?.sitemap?.match(urlRegex) || [];
+
+  if (!matches.length) {
+    return urls;
+  }
 
   for (const urlBlock of matches) {
     const locMatch = urlBlock.match(locRegex);

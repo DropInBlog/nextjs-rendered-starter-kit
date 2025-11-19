@@ -2,10 +2,13 @@ import { dibApi } from '../../../dib-lib/api';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const json = await dibApi.fetchBlogFeed();
-  return new NextResponse(json.data.feed, {
-    headers: {
-      'Content-Type': json.data.content_type,
-    },
+  const data = await dibApi.fetchBlogFeed();
+  const headers: HeadersInit = {};
+  if (data.content_type) {
+    headers['Content-Type'] = data.content_type;
+  }
+
+  return new NextResponse(data.feed, {
+    headers,
   });
 }
