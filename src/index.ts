@@ -24,15 +24,15 @@ program
     // Determine if project uses src/
     const usesSrc = options.src
       ? (
-        await inquirer.prompt([
-          {
-            type: 'confirm',
-            name: 'usesSrc',
-            message: 'Is your Next.js project using the "src/" folder?',
-            default: true,
-          },
-        ])
-      ).usesSrc
+          await inquirer.prompt([
+            {
+              type: 'confirm',
+              name: 'usesSrc',
+              message: 'Is your Next.js project using the "src/" folder?',
+              default: true,
+            },
+          ])
+        ).usesSrc
       : options.src;
 
     const projectRoot = process.cwd();
@@ -71,38 +71,6 @@ program
       console.log(chalk.green(`✅ Added ${label} module.`));
     }
 
-    // Copy the top-level catch-all `[...segment]` route into `app/[...segment]`
-    const appDir = path.join(basePath, 'app');
-    const segmentSource = path.join(__dirname, '../template/[...segment]');
-    const segmentTarget = path.join(appDir, '[...segment]');
-
-    if (fs.existsSync(segmentSource)) {
-      // Ensure `app` exists (the blog copy should have created it, but be safe)
-      fs.mkdirSync(appDir, { recursive: true });
-
-      if (fs.existsSync(segmentTarget)) {
-        const { overwriteSegmentRoot } = await inquirer.prompt([
-          {
-            type: 'confirm',
-            name: 'overwriteSegmentRoot',
-            message: '/app/[...segment] already exists. Overwrite?',
-            default: false,
-          },
-        ]);
-
-        if (!overwriteSegmentRoot) {
-          console.log(chalk.yellow('⚠️  Skipped /app/[...segment]'));
-        } else {
-          fs.rmSync(segmentTarget, { recursive: true, force: true });
-          fs.cpSync(segmentSource, segmentTarget, { recursive: true });
-          console.log(chalk.green('✅ Added /app/[...segment] module.'));
-        }
-      } else {
-        fs.cpSync(segmentSource, segmentTarget, { recursive: true });
-        console.log(chalk.green('✅ Added /app/[...segment] module.'));
-      }
-    }
-
     // Ask to install dependencies
     const { shouldInstall } = await inquirer.prompt([
       {
@@ -121,8 +89,8 @@ program
       const packageManager = hasYarn
         ? 'yarn add'
         : hasPnpm
-          ? 'pnpm add'
-          : 'npm install';
+        ? 'pnpm add'
+        : 'npm install';
 
       try {
         execSync(
