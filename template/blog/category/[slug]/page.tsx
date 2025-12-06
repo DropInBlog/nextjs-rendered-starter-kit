@@ -11,9 +11,17 @@ export default async function Category({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = await params;
-  const { body_html, head_data } = await dibApi.fetchCategories({
-    slug,
-  });
-  return <DibBlog body_html={body_html} head_data={head_data} />;
+  let data;
+  try {
+    const { slug } = await params;
+    data = await dibApi.fetchCategories({
+      slug,
+    });
+  } catch (error) {
+    throw error;
+  }
+  const { body_html, head_data } = data || {};
+
+  if (body_html && head_data)
+    return <DibBlog body_html={body_html} head_data={head_data} />;
 }

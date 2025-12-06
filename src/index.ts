@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { Command } from 'commander';
 import chalk from 'chalk';
 import inquirer from 'inquirer';
@@ -22,9 +21,8 @@ program
     console.log(chalk.cyan('🚀 Setting up Next.js rendered starter kit...\n'));
 
     // Determine if project uses src/
-    const usesSrc =
-      options.src ??
-      (
+    const usesSrc = options.src
+      ? (
         await inquirer.prompt([
           {
             type: 'confirm',
@@ -33,7 +31,8 @@ program
             default: true,
           },
         ])
-      ).usesSrc;
+      ).usesSrc
+      : options.src;
 
     const projectRoot = process.cwd();
     const basePath = usesSrc ? path.join(projectRoot, 'src') : projectRoot;
@@ -89,8 +88,8 @@ program
       const packageManager = hasYarn
         ? 'yarn add'
         : hasPnpm
-        ? 'pnpm add'
-        : 'npm install';
+          ? 'pnpm add'
+          : 'npm install';
 
       try {
         execSync(

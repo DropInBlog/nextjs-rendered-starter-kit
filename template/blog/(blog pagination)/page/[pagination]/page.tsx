@@ -14,7 +14,17 @@ export default async function BlogPagination({
 }: {
   params: { pagination: string };
 }) {
-  const p = await params;
-  const { body_html, head_data } = await dibApi.fetchMainList(p);
-  return <DibBlog body_html={body_html} head_data={head_data} />;
+  let data;
+  try {
+    const p = await params;
+    data = await dibApi.fetchMainList(p);
+  } catch (error) {
+    throw error;
+  }
+
+  const { body_html, head_data } = data || {};
+
+  if (body_html && head_data) {
+    return <DibBlog body_html={body_html} head_data={head_data} />;
+  }
 }

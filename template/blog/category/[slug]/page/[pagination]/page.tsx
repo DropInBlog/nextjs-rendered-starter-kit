@@ -11,10 +11,18 @@ export default async function CategoryPagination({
 }: {
   params: { pagination: string; slug: string };
 }) {
-  const { pagination, slug } = await params;
-  const { body_html, head_data } = await dibApi.fetchCategories({
-    slug,
-    pagination,
-  });
-  return <DibBlog body_html={body_html} head_data={head_data} />;
+  let data;
+  try {
+    const { pagination, slug } = await params;
+    data = await dibApi.fetchCategories({
+      slug,
+      pagination,
+    });
+  } catch (error) {
+    throw error;
+  }
+  const { body_html, head_data } = data || {};
+
+  if (body_html && head_data)
+    return <DibBlog body_html={body_html} head_data={head_data} />;
 }

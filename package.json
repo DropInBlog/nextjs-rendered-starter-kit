@@ -39,8 +39,8 @@
     "url": "https://github.com/DropInBlog/nextjs-rendered-starter-kit/issues"
   },
   "dependencies": {
-    "@dropinblog/api-client": "^1.0.5",
-    "@dropinblog/nextjs-rendered": "^2.0.4",
+    "@dropinblog/api-client": "^1.0.6",
+    "@dropinblog/nextjs-rendered": "^2.0.5",
     "chalk": "^4.1.2",
     "commander": "^14.0.0",
     "inquirer": "^12.9.0"

@@ -8,9 +8,18 @@ export const generateMetadata = async ({
 }) => dibUtils.generateMetadataFromFetcher(dibApi.fetchAuthor, params);
 
 export default async function Author({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
-  const { body_html, head_data } = await dibApi.fetchAuthor({
-    slug,
-  });
-  return <DibBlog body_html={body_html} head_data={head_data} />;
+  let data;
+  try {
+    const { slug } = await params;
+    data = await dibApi.fetchAuthor({
+      slug,
+    });
+  } catch (error) {
+    throw error;
+  }
+
+  const { body_html, head_data } = data || {};
+
+  if (body_html && head_data)
+    return <DibBlog body_html={body_html} head_data={head_data} />;
 }
