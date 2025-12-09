@@ -1,5 +1,7 @@
 # @dropinblog/nextjs-rendered-starter-kit
 
+> **⚠️ DEPRECATED:** This package is deprecated. Please use [@dropinblog/react-nextjs](https://github.com/DropInBlog/react-nextjs) instead.
+
 A CLI that scaffolds a DropInBlog‑powered /blog into an existing Next.js project.
 ## Features
 
